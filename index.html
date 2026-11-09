@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#211a15">
+<meta name="description" content="A little world of moments, captured through my eyes.">
+<title>Through My Eyes — A collection of moments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="grain"></div>
+<main>
+<section class="landing" id="landing" aria-label="Welcome">
+  <div class="landing-photo"></div>
+  <div class="vignette"></div>
+  <div class="topline"><span> A PERSONAL COLLECTION</span><span class="topline-mark">✳</span><span>EST. IN MOMENTS</span></div>
+  <div class="lens-ring" aria-hidden="true"><div class="lens-inner"></div></div>
+  <div class="welcome-wrap">
+    <div class="eyebrow"><span></span> SOMEWHERE BETWEEN HERE & THERE <span></span></div>
+    <svg class="heart-svg" viewBox="0 0 300 230" aria-hidden="true">
+      <path class="heart-path" d="M150 207 C126 185 26 119 26 66 C26 10 96 0 150 62 C204 0 274 10 274 66 C274 119 174 185 150 207Z"/>
+      <path class="heart-shine" d="M150 207 C126 185 26 119 26 66 C26 10 96 0 150 62 C204 0 274 10 274 66 C274 119 174 185 150 207Z"/>
+    </svg>
+    <p class="script-intro">A little world, seen through my eyes</p>
+    <h1>Guess where<br><em>you are!!!</em></h1>
+    <p class="not-guessing">Don't want to guess? <span>It's okay.</span></p>
+    <p class="subcopy">I'll show you where you've just landed.</p>
+    <button class="enter-button" id="enterBtn"><span>LET'S EXPLORE MY WORLD</span><b>↗</b></button>
+    <p class="scroll-note">TAP TO STEP INSIDE</p>
+  </div>
+  <div class="bottom-note"><span>NO ROUTE. NO RULES.</span><span>JUST MOMENTS.</span></div>
+</section>
+
+<section class="gallery" id="gallery" aria-label="Photo collection">
+  <header class="gallery-header">
+    <div class="small-label">WELCOME TO MY LITTLE CORNER</div>
+    <h2>Through <em>my eyes.</em></h2>
+    <p>Places, people, little details and moments I wanted to keep.</p>
+    <div class="collection-count"><span id="countLabel">56 MOMENTS</span><i></i><span>AND COUNTING</span></div>
+  </header>
+  <div class="memory-stream" id="memoryStream"></div>
+  <footer class="gallery-footer">
+    <div class="footer-heart">♡</div>
+    <h2>Some moments<br><em>stay with us.</em></h2>
+    <p>Thanks for taking a little walk through my eyes.</p>
+    <button id="backTop" class="back-top">BACK TO THE BEGINNING ↑</button>
+  </footer>
+</section>
+</main>
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="closeLightbox" aria-label="Close">×</button>
+  <button class="lightbox-prev" id="prevPhoto" aria-label="Previous">‹</button>
+  <div class="lightbox-content" id="lightboxContent"></div>
+  <button class="lightbox-next" id="nextPhoto" aria-label="Next">›</button>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
