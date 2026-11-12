@@ -22,11 +22,36 @@ media.forEach((item,i)=>{
 });
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}}),{threshold:.08});
 document.querySelectorAll('.memory-item').forEach(el=>observer.observe(el));
-document.getElementById('enterBtn').addEventListener('click',()=>{
-  landing.classList.add('leaving');
-  gallery.classList.add('show');
-  setTimeout(()=>{gallery.scrollIntoView({behavior:'smooth'});},120);
+const enterButton=document.getElementById('enterBtn');
+enterButton.addEventListener('click',()=>{
+  if(landing.classList.contains('opening')) return;
+  landing.classList.add('opening');
+  enterButton.disabled=true;
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const delay=reduced?30:820;
+  window.setTimeout(()=>{
+    gallery.classList.add('show');
+    gallery.scrollIntoView({behavior:reduced?'auto':'smooth'});
+    landing.classList.remove('opening');
+    enterButton.disabled=false;
+  },delay);
 });
+
+// Subtle lens parallax: follows mouse on desktop and touch movement on mobile.
+const lensStage=document.getElementById('lensStage');
+if(lensStage){
+  lensStage.addEventListener('pointermove',(event)=>{
+    const rect=lensStage.getBoundingClientRect();
+    const x=((event.clientX-rect.left)/rect.width-.5)*2;
+    const y=((event.clientY-rect.top)/rect.height-.5)*2;
+    lensStage.style.setProperty('--mx',(x*18).toFixed(2)+'px');
+    lensStage.style.setProperty('--my',(y*18).toFixed(2)+'px');
+  });
+  lensStage.addEventListener('pointerleave',()=>{
+    lensStage.style.setProperty('--mx','0px');
+    lensStage.style.setProperty('--my','0px');
+  });
+}
 document.getElementById('backTop').addEventListener('click',()=>{landing.scrollIntoView({behavior:'smooth'});});
 const lightbox=document.getElementById('lightbox'),content=document.getElementById('lightboxContent'),caption=document.getElementById('lightboxCaption');
 let current=0;

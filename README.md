@@ -1,6 +1,6 @@
 # Through My Eyes — website
 
-A mobile-first personal photography website built with plain HTML, CSS and JavaScript.
+A mobile-first personal photography website built with plain HTML, CSS and JavaScript. The landing page features a cinematic, animated living camera lens; the gallery preserves the original photo and video journey.
 
 ## Preview locally
 1. Extract the ZIP.
